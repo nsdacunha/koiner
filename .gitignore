@@ -1,0 +1,30 @@
+## Ignore Quartus backup files
+*.bak
+
+## Ignore Quartus generated binaries
+db/
+incremental_db/
+*.qws
+
+## Ignore Quartus temp file
+*.done
+
+## Ignore Xilinx Vivado temp files
+*.cache/
+*.hw/
+**/*runs/.jobs/
+**/*runs/**/*.bat
+**/*runs/**/*.dcp
+**/*runs/**/*.jou
+**/*runs/**/*.js
+**/*runs/**/*.log
+**/*runs/**/*.pb
+**/*runs/**/*.rst
+**/*runs/**/*.sh
+**/*runs/**/*.tcl
+**/*runs/**/*.txt
+**/*runs/**/*.vds
+**/*runs/**/*.wdf
+**/*runs/**/*.xml
+__*__
+!*.rpt
