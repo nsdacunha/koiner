@@ -1,0 +1,47 @@
+#+OPTIONS: H:3 num:nil toc:2 \n:nil ::t |:t ^:{} -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP: align fold nodlcheck hidestars oddeven lognotestate hideblocks
+#+TAGS: noexport(n)
+#+TITLE: Koiner Design Document
+#+AUTHOR: Neil S Da Cunha
+#+EMAIL: nsdacunha[at]gmail[dot]com
+#+LANGUAGE: en
+#+HTML_HEAD:      <style type="text/css">#outline-container-introduction{ clear:both; }</style>
+#+EXCLUDE_TAGS: noexport
+
+#+name: banner
+#+begin_export html
+  <div id="subtitle" style="float: center; text-align: center;">
+  <p>
+  Koiner Design Document
+  </p>
+  </div>
+#+end_export
+
+* Overview
+A multi-core FPGA system that can mine for Bitcoins or Litecoins.
+* Supported Features
+** Multi core mining
+Multiple cores can be configured to work in parallel to process and solve a single solution to a block.
+** Mining in a pool
+Plan to support the ability to work in a mining pool for shared results.
+** Live switching between Litecoin and Bitcoin
+Plan to support switching between Litecoin and Bitcoin without needing to reconfigure the FPGA.
+* Definitions
+* Modules
+** Koiner
+Top level module that manages workload between the cores and communicates with the outside world.
+** Memory
+Stores the current block being processed, each core will have its own memory block.
+** Hasher
+Calculates the hash for a bitstream as defined by the Bitcoin or Litecoin protocol.
+** USB
+USB connection to a computer get a block to process or upload a finished block.
+* Testing Strategy
+** Koiner
+Sample blocks will be input to the FPGA and compared with the actual blockchain solution.
+** Memory
+A March algorithm will be used to test the timing of the memory.
+** Hasher
+A series of testvectors will be generated and checked against via simulation.
+** USB
+A loopback will be used in simulation to verify that data can be sent and recieved.
