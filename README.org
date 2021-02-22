@@ -1,2 +1,0 @@
-* Koiner
- A multi-core FPGA system that can mine for Bitcoins or Litecoins.
